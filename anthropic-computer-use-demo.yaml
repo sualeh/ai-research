@@ -1,0 +1,24 @@
+services:
+
+  anthropic-computer-use-demo:
+    image: ghcr.io/anthropics/anthropic-quickstarts:computer-use-demo-latest
+    container_name: computer-use
+    ports:
+      - target: 5900
+        published: 5900
+        protocol: tcp
+        mode: host
+      - target: 6080
+        published: 6080
+        protocol: tcp
+        mode: host
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host        
+    environment:
+      ANTHROPIC_API_KEY: <anthropic_api_key>
+    volumes:
+      - type: bind
+        source: ./anthropic-computer-use-demo
+        target: /home/computeruse/.anthropic
