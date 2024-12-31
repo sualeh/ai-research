@@ -1,0 +1,6 @@
+services:
+  api:
+    volumes:
+      - type: bind
+        source: ./libre-chat-config.yaml
+        target: /app/librechat.yaml

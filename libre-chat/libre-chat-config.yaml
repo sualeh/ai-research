@@ -1,0 +1,14 @@
+version: "1.0.9"
+
+mcpServers:
+  filesystem:
+    type: stdio
+    command: docker 
+    args:
+    - run 
+    - "-i" 
+    - "--rm" 
+    - "--mount" 
+    - "type=bind,src=./,dst=/projects/Desktop,ro"
+    - mcp/filesystem 
+    - /projects

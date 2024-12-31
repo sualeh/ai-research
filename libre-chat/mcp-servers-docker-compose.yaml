@@ -1,0 +1,10 @@
+services:
+  filesystem:
+    container_name: filesystem
+    image: mcp/filesystem
+    command: /projects
+    volumes:
+      - type: bind
+        # source: /c/Users/sualeh/OneDrive/Documents
+        source: ./
+        target: /projects/Documents
